@@ -129,7 +129,6 @@ services:
     environment:
       BITCOIN_NETWORK: regtest
       BITCOIN_WALLETDIR: "/data/wallets"
-      CREATE_WALLET: "false"
       BITCOIN_SKIP_WALLET_MIGRATION: "true"
       BITCOIN_EXTRA_ARGS: |-
         rpcuser=ceiwHEbqWI83
