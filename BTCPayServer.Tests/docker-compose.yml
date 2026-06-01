@@ -72,10 +72,11 @@ services:
         - "sshd_datadir:/root/.ssh"
 
   devlnd:
-    image: btcpayserver/bitcoin:31.0
+    image: pinheadmz/bitcoin:pr35182-ddefe4263b
     environment:
       BITCOIN_NETWORK: regtest
       BITCOIN_WALLETDIR: "/data/wallets"
+      BITCOIN_SKIP_WALLET_MIGRATION: "true"
       BITCOIN_EXTRA_ARGS: |
         deprecatedrpc=signrawtransaction
         connect=bitcoind:39388
@@ -125,10 +126,11 @@ services:
 
   bitcoind:
     restart: unless-stopped
-    image: btcpayserver/bitcoin:31.0
+    image: pinheadmz/bitcoin:pr35182-ddefe4263b
     environment:
       BITCOIN_NETWORK: regtest
       BITCOIN_WALLETDIR: "/data/wallets"
+      BITCOIN_SKIP_WALLET_MIGRATION: "true"
       BITCOIN_EXTRA_ARGS: |-
         rpcuser=ceiwHEbqWI83
         rpcpassword=DwubwWsoo3
