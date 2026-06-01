@@ -76,6 +76,7 @@ services:
     environment:
       BITCOIN_NETWORK: regtest
       BITCOIN_WALLETDIR: "/data/wallets"
+      BITCOIN_SKIP_WALLET_MIGRATION: "true"
       BITCOIN_EXTRA_ARGS: |
         deprecatedrpc=signrawtransaction
         connect=bitcoind:39388
